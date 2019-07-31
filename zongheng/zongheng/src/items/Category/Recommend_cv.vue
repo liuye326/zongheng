@@ -2,7 +2,7 @@
     <div class="main" @click="toDetails">    
         <a href="javascript:;" class="bodys" v-for="(item,i) of list" :data-bid="item.bid" :key="i">
             <div class="body_left"  :data-bid="item.bid">
-                <img :src="item.b_pic" :alt="item.title" :data-bid="item.bid">
+                <img :src="url_header + item.b_pic" :alt="item.title" :data-bid="item.bid">
             </div>
             <div class="body_right" :data-bid="item.bid">
                 <h4 :data-bid="item.bid">{{item.title}}</h4>
@@ -21,7 +21,8 @@ export default {
       }//数据
   },
   props:{
-    list:{default:[]}
+    list:{default:[]},
+    url_header:{default:""}
   },
   methods:{
     toDetails(e){

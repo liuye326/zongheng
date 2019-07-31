@@ -3,7 +3,7 @@
         <div>
             <a href="#" class="bodys" v-for="(item,i) of list" :key="i" @click="toDetails(item.bid)">
                 <div class="body_left">
-                    <img :src="item.b_pic">
+                    <img :src="url_header + item.b_pic">
                 </div>
                 <div class="body_right">
                     <h4>{{item.title}}</h4>
@@ -19,7 +19,7 @@
 export default {
   data(){ //当前组件共享数据
       return {
-          
+          url_header:""
       }//数据
   },
   props:{
@@ -37,7 +37,7 @@ export default {
     }
   },
   created(){
-
+      this.url_header = this.$store.getters.getUrlHeader;
   }
 }
 </script>

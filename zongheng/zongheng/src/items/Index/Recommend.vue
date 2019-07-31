@@ -7,7 +7,7 @@
         
             <a :href="item.r_link" class="bodys" v-for="(item,i) of recommendData" :key="i" @click="toDetails">
                 <div class="body_left">
-                    <img :src="item.reco_pic">
+                    <img :src="url_header + item.reco_pic">
                 </div>
                 <div class="body_right">
                     <h4>{{item.title}}</h4>
@@ -36,6 +36,7 @@ export default {
   },
   props:{
     recommendData:{default:""},
+    url_header:{default:""}
   },
   methods:{
     toDetails(){

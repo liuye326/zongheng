@@ -7,7 +7,7 @@
       </p> 
     </div>
     <div class="inner_two">
-      <Recommend :list="list"></Recommend>
+      <Recommend :list="list" :url_header="url_header"></Recommend>
     </div>
     <mt-button type="default" size="large" @click.native="loadMore">获取更多</mt-button>
     <Statement></Statement>
@@ -26,7 +26,8 @@
         data_count:29,
         title_f:"",
         title_s:"",
-        backTo:0
+        backTo:0,
+        url_header:""
       }
     },
     props:{
@@ -57,6 +58,7 @@
       }
     },
     created() {
+      this.url_header = this.$store.getters.getUrlHeader;
       this.loadMore();
       this.title_f = this.$route.query.title_f;
       this.title_s = this.$route.query.title_s;

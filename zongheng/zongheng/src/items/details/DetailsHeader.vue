@@ -30,15 +30,15 @@
           });
         }else if(this.backTo==1){
           this.$store.commit('setSelected',"4")
-          this.$router.push("index");
+          this.$router.push("/");
         }else if(this.backTo==2){
           this.$store.commit('setSelected',"1")
-          this.$router.push("index");
+          this.$router.push("/");
         }
       },
       shelf(){
         this.$store.commit('setSelected',"4")
-        this.$router.push("index");
+        this.$router.push("/");
       }
     }
   }

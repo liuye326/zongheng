@@ -7,7 +7,7 @@
         </div>
         <a target="_blank" class="bodys" v-if="dataone['reco_link']!=undefined" :href="dataone['reco_link']" @click="toDetails">
             <div class="body_left">
-                <img :src="dataone['reco_pic']" :alt="dataone['title']">
+                <img :src="url_header + dataone['reco_pic']" :alt="dataone['title']">
             </div>
             <div class="body_right">
                 <h4>{{dataone['title']}}</h4>
@@ -45,6 +45,7 @@ export default {
     onebenData:{default:[]},
     oneben:{default:[]},
     dataone:{default:[]},
+    url_header:{default:""}
   },
   watch: {
   

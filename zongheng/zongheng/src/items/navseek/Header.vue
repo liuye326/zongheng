@@ -21,7 +21,7 @@
       },
       shelf(){
         this.$store.commit('setSelected',"4")
-        this.$router.push("index");
+        this.$router.push("/");
       }
     }
   }

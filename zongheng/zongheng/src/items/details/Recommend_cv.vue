@@ -2,7 +2,7 @@
     <div class="main">    
         <a href="javascript:;" class="bodys" v-for="(item,i) of recommendData" :key="i" @click="toDetails(item.bid)">
             <div class="body_left">
-                <img :src="item.b_pic" :alt="item.title">
+                <img :src="url_header + item.b_pic" :alt="item.title">
             </div>
             <div class="body_right">
                 <h4>{{item.title}}</h4>
@@ -24,7 +24,8 @@ export default {
     recommendData:{default:[]},
     Dataone:{default:[]},
     Datatwo:{default:[]},
-    bid:{default:""}
+    bid:{default:""},
+    url_header:{default:""}
   },
   methods:{
     toDetails(bid){
@@ -34,14 +35,14 @@ export default {
               bid
             }
         })
-        this.axios.get("details/getdetails",{
+        this.axios.get("/details/getdetails",{
             params:{
                 id: bid
             }
         }).then(res=>{
             this.$emit('update:recommendData', res.data[1]);
-            this.$emit('update:Dataone', res.data[0]);
-            this.$emit('update:Datatwo', res.data[2]);
+            this.$emit('update:dataone', res.data[0]);
+            this.$emit('update:datatwo', res.data[2]);
             this.$emit('update:bid', bid);
         })
     }

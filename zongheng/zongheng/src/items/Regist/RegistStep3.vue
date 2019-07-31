@@ -1,6 +1,6 @@
 <template>
   <div class="outer">
-    <img src="http://localhost:4000/images/regist.png" alt=""> 
+    <img src="http://freely.applinzi.com/images/regist.png" alt=""> 
     <p>书友 <span>{{user.nickname}}</span></p>
     <h3>欢迎加入纵横文学</h3>
     <mt-button size="large" type="danger" @click="toLogin">前往登录</mt-button>

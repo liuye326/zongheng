@@ -23,7 +23,7 @@
           this.$router.go(-1);
         }else if(this.backTo == 1){
           this.$store.commit('setSelected',"4")
-          this.$router.push("index");
+          this.$router.push("/");
         }
 
       },

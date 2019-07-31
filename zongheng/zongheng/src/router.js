@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 import index from './items/index.vue'
 import category from './items/Category.vue'
 import Rank from './items/Rank.vue'
@@ -17,8 +16,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'index',
+      component: index
     },
     {
       path: '/about',
@@ -28,7 +27,6 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
-    {path:'/index',component:index},
     {path:'/category',component:category},
     {path:'/rank',component:Rank},
     {path:'/bookshelf',component:Bookshelf},

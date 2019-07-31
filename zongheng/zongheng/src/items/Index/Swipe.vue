@@ -1,17 +1,8 @@
 <template>
     <div>    
       <mt-swipe :auto="4000" continuous class="myswipe">
-        <mt-swipe-item>
-            <img src="https://static.zongheng.com/upload/recommend/current/2019/1562919538042.jpg" alt="符篆苍穹" width="100%" height="100%" @click="toDetails">
-        </mt-swipe-item>
-        <mt-swipe-item>
-            <img src="https://static.zongheng.com/upload/recommend/current/2019/1562919470299.jpg" alt="仙道九绝" width="100%" height="100%" @click="toDetails">
-        </mt-swipe-item>
-        <mt-swipe-item>
-            <img src="https://static.zongheng.com/upload/recommend/current/2019/1562919438190.jpg" alt="最强狂医" width="100%" height="100%" @click="toDetails">
-        </mt-swipe-item>
-        <mt-swipe-item>
-            <img src="https://static.zongheng.com/upload/recommend/current/2019/1562919500039.jpg" alt="龙凤萌宝:总裁大人宠上瘾" width="100%" height="100%" @click="toDetails">
+        <mt-swipe-item v-for="(item,i) of swipeData" :key="i">
+            <img :src="url_header + item.banner_pic" alt="符篆苍穹" width="100%" height="100%" @click="toDetails">
         </mt-swipe-item>
       </mt-swipe>
     </div>
@@ -20,8 +11,12 @@
 export default {
   data(){ //当前组件共享数据
       return {
-         selected:""    
+         selected:""
       }//数据
+  },
+  props:{
+      swipeData:{default:[]},
+      url_header:{default:""}
   },
   methods:{
       toDetails(){

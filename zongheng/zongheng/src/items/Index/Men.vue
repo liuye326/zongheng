@@ -7,13 +7,13 @@
         </div>
         <div class="bodys">
             <a v-if="item.r_link!=undefined" :href="item.r_link" class="items" v-for="(item,i) of menData" :key="i" @click="toDetails">
-                <img v-if="item.s_pic!=null" :src="item.s_pic">    
-                <img v-else :src="item.b_pic">    
+                <img v-if="item.s_pic!=null" :src="url_header + item.s_pic">    
+                <img v-else :src="url_header + item.b_pic">    
                 <i>{{item.title}}</i>
             </a>
             <a v-if="item.p_link!=undefined" :href="item.p_link" class="items" v-for="(item,i) of menData" :key="i" @click="toDetails">
-                <img v-if="item.s_pic!=null" :src="item.s_pic">    
-                <img v-else :src="item.b_pic">    
+                <img v-if="item.s_pic!=null" :src="url_header + item.s_pic">    
+                <img v-else :src="url_header + item.b_pic">    
                 <i>{{item.title}}</i>
             </a>
         </div> 
@@ -30,7 +30,8 @@ export default {
   },
    props:{
     menData:{default:[]},
-    mentitle:{default:[]}
+    mentitle:{default:[]},
+    url_header:{default:""}
   },
   methods:{
     toDetails(){
@@ -60,6 +61,7 @@ export default {
         border-bottom: 1px solid #e6e6e6;
         background: #fff;
         box-sizing:border-box;
+        margin-top:1rem;
     }
     .main .main_title{
         width:100%;

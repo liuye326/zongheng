@@ -3,7 +3,7 @@
 		<Header :backTo="backTo"></Header>    
         <div class="heads">
             <div class="h_left">
-                <img :src="Dataone['pic']" >
+                <img :src="url_header + Dataone['pic']" >
             </div>
             <div class="h_right">
                 <h5>{{Dataone['title']}}</h5>
@@ -55,7 +55,7 @@
                 </div>
 
             </div>
-            <recommend :recommendData.sync="recommendData" :Dataone.sync="Dataone" :Datatwo.sync="Datatwo" :bid.sync="bid"></recommend>
+            <recommend :recommendData.sync="recommendData" :Dataone.sync="Dataone" :Datatwo.sync="Datatwo" :bid.sync="bid" :url_header="url_header"></recommend>
         </div>
 				<Statement></Statement>
     </div>
@@ -74,7 +74,8 @@ export default {
           bid:1,
           isInshelf:"加入书架",
           inshelfState:0,
-          backTo:0
+          backTo:0,
+          url_header:""
       }
   }, 
   methods:{
@@ -155,6 +156,7 @@ export default {
     }
   },
   created(){
+     this.url_header = this.$store.getters.getUrlHeader;
      var id = this.$route.query.bid;
      var back = this.$route.query.back;
      if(back !== undefined){
@@ -166,8 +168,7 @@ export default {
         this.checkShelf();
      }
      this.readed(id);
-     var url = "http://127.0.0.1:4000/details/getdetails";
-     this.axios.get(url,{
+     this.axios.get("/details/getdetails",{
      params:{
         id
      }

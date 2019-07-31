@@ -6,7 +6,7 @@ import axios from "axios";
 //3.发送请求时保存session信息
 axios.defaults.withCredentials = true;
 //4.设置请求基础路径
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "http://freely.applinzi.com";
 //5.将axios注册vue实例（不支持use注册的方式，需将其放入到Vue的原型对象中）
 Vue.prototype.axios = axios;
 //6.在main.js中引入axios.js

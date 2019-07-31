@@ -41,14 +41,12 @@ export default {
   },
   methods:{
     sears:function(){
-        var url = "http://127.0.0.1:4000/ns/searchlimit";
-        this.axios.get(url,{
+        this.axios.get("/ns/searchlimit",{
         params:{
             key:this.search
         }
         }).then(res=>{
             this.recommendData = res.data;
-            console.log(this.recommendData)
         })
     }
   },
@@ -60,8 +58,7 @@ export default {
       }
   },
   created(){ 
-    var url = "http://127.0.0.1:4000/ns/navseek";
-     this.axios.get(url,{
+     this.axios.get("/ns/navseek",{
      params:{
        
      }

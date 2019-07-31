@@ -3,7 +3,7 @@
       <Header></Header>
       <div class="main">
 				<div  class="myimg">
-							<img src="http://127.0.0.1:4000/images/login.png">
+							<img src="http://freely.applinzi.com/images/login.png">
 				</div>
 					<div class="myform">
 							<mt-field label="账号" placeholder="Input username" v-model="username" :attr="{ maxlength: 12 }"  ></mt-field>
@@ -44,7 +44,7 @@ export default{
                 }else{
                     sessionStorage.setItem("uid",res.data.uid);
                     this.$store.commit('setSelected',"4")
-                    this.$router.push("index")
+                    this.$router.push("/")
                 }
             })
         }  

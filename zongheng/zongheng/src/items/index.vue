@@ -10,14 +10,14 @@
    
         <mt-tab-container v-model="selected">
             <mt-tab-container-item id="1" class="back"> 
-                <swipe :swipeData="swipeData"></swipe>
+                <swipe :swipeData="swipeData" :url_header="url_header"></swipe>
                 <twobt></twobt>
-                <recommend :recommendData="recommendData"></recommend>
-                <men :menData="menDatamale" :mentitle="maletitle"></men>
-                <men :menData="menDatafemale" :mentitle="femaletitle"></men>
-                <oneben :onebenData="onebenData[i]" :oneben="oneben[i]" :dataone="dataone[i]" v-for="(item,i) of onebenData" :key="i"></oneben>
-                 <men :menData="menDatawanben" :mentitle="wanbentitle"></men>
-                 <men :menData="menDataxinshu" :mentitle="xinshutitle"></men>
+                <recommend :recommendData="recommendData" :url_header="url_header"></recommend>
+                <men :menData="menDatamale" :mentitle="maletitle" :url_header="url_header"></men>
+                <men :menData="menDatafemale" :mentitle="femaletitle" :url_header="url_header"></men>
+                <oneben :onebenData="onebenData[i]" :oneben="oneben[i]" :dataone="dataone[i]" v-for="(item,i) of onebenData" :key="i" :url_header="url_header"></oneben>
+                 <men :menData="menDatawanben" :mentitle="wanbentitle" :url_header="url_header"></men>
+                 <men :menData="menDataxinshu" :mentitle="xinshutitle" :url_header="url_header"></men>
                 <Statement></Statement>
             </mt-tab-container-item>
             <mt-tab-container-item id="2">
@@ -59,7 +59,8 @@ export default {
          xinshutitle:"新书精选",
          onebenData:[],
          oneben:[],
-         dataone:[]
+         dataone:[],
+         url_header:""
       }//数据
   },
   watch:{
@@ -72,8 +73,8 @@ export default {
   },
   created(){
      this.selected = this.$store.getters.getSelected;
-     var url = "http://127.0.0.1:4000/index/getindex";
-     this.axios.get(url,{
+     this.url_header = this.$store.getters.getUrlHeader;
+     this.axios.get("/index/getindex",{
      params:{
        
      }

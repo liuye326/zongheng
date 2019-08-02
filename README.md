@@ -18,7 +18,6 @@
 <img src="/readmeImg/zh01.png" style="width:45%">
 <img src="/readmeImg/zh02.png" style="width:45%">
 <img src="/readmeImg/zh03.png" style="width:45%">
-<img src="/readmeImg/zh04.png" style="width:45%">
 <img src="/readmeImg/zh05.png" style="width:45%">
 <img src="/readmeImg/zh06.png" style="width:45%">
 <img src="/readmeImg/zh07.png" style="width:45%">

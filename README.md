@@ -15,19 +15,11 @@
 </ol>
 
 ##### 截图
-首页
 <img src="/readmeImg/zh01.png" style="width:45%">
-分类
 <img src="/readmeImg/zh02.png" style="width:45%">
-排行
 <img src="/readmeImg/zh03.png" style="width:45%">
-书架
 <img src="/readmeImg/zh04.png" style="width:45%">
-书籍列表
 <img src="/readmeImg/zh05.png" style="width:45%">
-书籍详情
 <img src="/readmeImg/zh06.png" style="width:45%">
-章节列表
 <img src="/readmeImg/zh07.png" style="width:45%">
-阅读页面
 <img src="/readmeImg/zh08.png" style="width:45%">
